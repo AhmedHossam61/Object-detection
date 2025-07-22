@@ -15,7 +15,7 @@ TrDict = {
     'tld': cv2.legacy.TrackerTLD.create,
 }
 
-Trcker_name = 'tld'
+Trcker_name = 'csrt'
 tracker = TrDict[Trcker_name]()
 
 print("step 1: loading the video to select the object")
