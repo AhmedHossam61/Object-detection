@@ -21,8 +21,7 @@ tracker = TrDict[Trcker_name]()
 print("step 1: loading the video to select the object")
 # I added this step because camera takes time to launch and adjust it's resolution
 
-# v = cv2.VideoCapture("WIN_20250722_23_10_43_Pro.mp4")
-v = cv2.VideoCapture("vid1 (online-video-cutter.com)_2.mp4")
+v = cv2.VideoCapture("WIN_20250723_01_20_00_Pro.mp4")
 
 if not v.isOpened():
     print("Error: Cannot open video file!")
@@ -57,8 +56,8 @@ print("object selected: ", bounadary_box)
 print("Step 2: Starting the tracking process...")
 
 #Start the real-time tracking process
-# cap = cv2.VideoCapture(0)  # Use 0 for webcam or replace with video file path)
-cap = cv2.VideoCapture("vid1 (online-video-cutter.com)_2.mp4")
+# cap = cv2.VideoCapture(0)  # Use 0 for webcam or replace with video file path like the line below)
+cap = cv2.VideoCapture("WIN_20250723_01_20_00_Pro.mp4")
 
 if not cap.isOpened():
     print("Error: Cannot open video source!")
@@ -79,13 +78,6 @@ while True:
     if success:
         (x, y, w, h) = [int(a) for a in box]
         
-        # Validate box to prevent crazy results
-        frame_h, frame_w = frame.shape[:2]
-        x = max(0, min(x, frame_w - 1))
-        y = max(0, min(y, frame_h - 1))
-        w = min(w, frame_w - x)
-        h = min(h, frame_h - y)
-        
         # Only draw if box is reasonable size
         if w > 5 and h > 5:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (100, 255, 0), 2)
@@ -99,6 +91,8 @@ while True:
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (100, 255, 0), 2)
                 cv2.putText(frame, f'Size: {w}x{h}', (10, 60), 
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (100, 255, 0), 2)
+                cv2.putText(frame, "press \"r\" to reselect an object", (10, 90), 
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (100, 255, 0), 2)
         else:
             cv2.putText(frame, 'Invalid tracking result', (10, 30), 
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
@@ -108,7 +102,7 @@ while True:
     
     cv2.imshow("Real-time Tracking", frame)
     
-    key = cv2.waitKey(30)
+    key = cv2.waitKey(50)
     if key == ord('q'):
         
         break
