@@ -1,0 +1,29 @@
+{
+  "AHMED": {
+    "baseline_ear": 0.34844861437531716,
+    "baseline_mar": 0.36101057773465045,
+    "baseline_brightness": 145.25357096354168,
+    "sensitivity_level": 2,
+    "adaptive_eye_thresh": 0.26133646078148787,
+    "adaptive_mouth_thresh": 0.5,
+    "last_calibration": "2025-07-04T00:02:15.837417"
+  },
+  "MOHAMED ALI": {
+    "baseline_ear": 0.33337577856095807,
+    "baseline_mar": 0.335689135722396,
+    "baseline_brightness": 149.046630859375,
+    "sensitivity_level": 2,
+    "adaptive_eye_thresh": 0.25003183392071854,
+    "adaptive_mouth_thresh": 0.5,
+    "last_calibration": "2025-07-04T21:28:02.603337"
+  },
+  "AHMED HOSSAM": {
+    "baseline_ear": 0.2970445343581244,
+    "baseline_mar": 0.37446159800912404,
+    "baseline_brightness": 137.92371744791666,
+    "sensitivity_level": 2,
+    "adaptive_eye_thresh": 0.2227834007685933,
+    "adaptive_mouth_thresh": 0.5,
+    "last_calibration": "2025-07-04T23:41:51.961375"
+  }
+}
